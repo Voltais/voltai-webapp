@@ -3,20 +3,6 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import AccessGate from '../components/AccessGate';
 
-// Расширяем глобальный объект window для TypeScript
-declare global {
-  interface Window {
-    Telegram?: {
-      WebApp?: {
-        initData?: string;
-        initDataUnsafe?: {
-          user?: TgUser;
-        };
-      };
-    };
-  }
-}
-
 type TgUser = {
   id: number;
   first_name?: string;
