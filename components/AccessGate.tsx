@@ -1,42 +1,75 @@
-import { useEffect, useState } from 'react'
-import axios from 'axios'
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 
-export default function AccessGate({ user }: { user: any }) {
-  const [status, setStatus] = useState<'loading' | 'ok' | 'fail'>('loading')
+interface TgUser {
+  id: number;
+  first_name?: string;
+  last_name?: string;
+  username?: string;
+  language_code?: string;
+}
+
+interface AccessGateProps {
+  user: TgUser;
+}
+
+export default function AccessGate({ user }: AccessGateProps) {
+  const [leoBalance, setLeoBalance] = useState<number | null>(null);
+  const [loading, setLoading] = useState(true);
+  const minRequired = 400;
 
   useEffect(() => {
-    axios.post(`${process.env.NEXT_PUBLIC_API_URL}/check`, { id: user?.id })
-      .then(res => {
-        if (res.data?.access === true) setStatus('ok')
-        else setStatus('fail')
-      })
-      .catch(() => setStatus('fail'))
-  }, [user])
+    const fetchBalance = async () => {
+      try {
+        const response = await axios.get(`/api/balance/${user.id}`);
+        setLeoBalance(response.data.balance);
+      } catch (error) {
+        console.error('Ошибка при получении баланса:', error);
+        setLeoBalance(null);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  if (status === 'loading') return <p>Проверка токенов LEO…</p>
-  if (status === 'ok') return <p className="text-green-400">✅ Доступ подтверждён</p>
+    fetchBalance();
+  }, [user.id]);
+
   return (
-    <div>
-      <p className="text-white">
-        👋 <strong>Добро пожаловать в VoltAI CryptoAssistant!</strong><br />
-        Ваш надёжный помощник в мире криптовалютного трейдинга!<br />
-        🔍 Провожу глубокий технический и фундаментальный анализ криптовалют.<br />
-        📈 Даю точные рекомендации: точки входа (лонг/шорт), стоп-лосс и тейк-профит.
-      </p>
-      <p className="text-white mt-2">
-        💰 <strong>Подписка на 30 дней</strong> — всего 400 токенов LEO.<br />
-        Токены LEO можно приобрести на PancakeSwap.
-      </p>
-      <p className="mt-2">
-        <a
-          href="https://pancakeswap.finance/swap?outputCurrency=0xf2740f3f2d9fe449df5613e69138fc1f389ee5c6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline text-blue-400"
-        >
-          🔗 Купить LEO и активировать подписку
-        </a>
-      </p>
+    <div className="p-6 max-w-xl mx-auto text-left bg-gray-800 rounded-2xl shadow-xl space-y-4">
+      <h2 className="text-xl font-semibold">👋 Добро пожаловать в <span className="text-blue-400">VoltAI CryptoAssistant</span>!</h2>
+      <p>Ваш надёжный помощник в мире криптовалютного трейдинга.</p>
+      <ul className="list-disc list-inside space-y-1">
+        <li>🔍 Глубокий технический и фундаментальный анализ</li>
+        <li>📈 Точные сигналы: вход (лонг/шорт), SL, TP</li>
+      </ul>
+
+      <div className="pt-2">
+        <p className="font-medium">💰 Подписка на 30 дней — <span className="text-green-400 font-bold">400 токенов LEO</span></p>
+        <p className="text-sm text-gray-300">Купить токены и активировать подписку:</p>
+      </div>
+
+      <a
+        href="https://pancakeswap.finance/swap?outputCurrency=0xf2740f3f2d9fe449df5613e69138fc1f389ee5c6"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-xl transition"
+      >
+        🔗 Перейти на PancakeSwap
+      </a>
+
+      <div className="pt-4">
+        {loading ? (
+          <p>Проверка баланса LEO...</p>
+        ) : leoBalance !== null ? (
+          leoBalance >= minRequired ? (
+            <p className="text-green-400 font-semibold">✅ Подписка активна — {leoBalance} LEO</p>
+          ) : (
+            <p className="text-red-400 font-semibold">🚫 Недостаточно токенов LEO ({leoBalance} / {minRequired})</p>
+          )
+        ) : (
+          <p className="text-red-400">Ошибка при получении баланса</p>
+        )}
+      </div>
     </div>
-  )
+  );
 }
