@@ -3,6 +3,20 @@ import Script from 'next/script';
 import { useEffect, useState } from 'react';
 import AccessGate from '../components/AccessGate';
 
+// Расширяем глобальный объект window для TypeScript
+declare global {
+  interface Window {
+    Telegram?: {
+      WebApp?: {
+        initData?: string;
+        initDataUnsafe?: {
+          user?: TgUser;
+        };
+      };
+    };
+  }
+}
+
 type TgUser = {
   id: number;
   first_name?: string;
@@ -15,8 +29,16 @@ export default function Home() {
   const [tgUser, setTgUser] = useState<TgUser | null>(null);
 
   useEffect(() => {
-    if (window.Telegram?.WebApp?.initDataUnsafe?.user) {
-      setTgUser(window.Telegram.WebApp.initDataUnsafe.user);
+    if (typeof window !== 'undefined') {
+      const check = setInterval(() => {
+        const user = window.Telegram?.WebApp?.initDataUnsafe?.user;
+        if (user) {
+          setTgUser(user);
+          clearInterval(check);
+        }
+      }, 200);
+
+      return () => clearInterval(check);
     }
   }, []);
 
@@ -26,7 +48,12 @@ export default function Home() {
         <title>VoltAI WebApp</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <Script src="https://telegram.org/js/telegram-web-app.js" />
+
+      <Script
+        src="https://telegram.org/js/telegram-web-app.js"
+        strategy="beforeInteractive"
+      />
+
       <main className="min-h-screen flex items-center justify-center bg-gray-900 text-white">
         <div className="text-center space-y-4">
           <h1 className="text-2xl font-bold">VoltAI Assistant</h1>
