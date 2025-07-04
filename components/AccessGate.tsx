@@ -36,7 +36,7 @@ export default function AccessGate({ user }: AccessGateProps) {
 
   return (
     <div className="p-6 max-w-xl mx-auto text-left bg-gray-800 rounded-2xl shadow-xl space-y-4">
-      <h2 className="text-xl font-semibold">👋 Добро пожаловать в <span className="text-blue-400">VoltAI CryptoAssistant</span>!</h2>
+      <h2 className="text-xl font-semibold">👋 Добро пожаловать!</h2>
       <p>Ваш надёжный помощник в мире криптовалютного трейдинга.</p>
       <ul className="list-disc list-inside space-y-1">
         <li>🔍 Глубокий технический и фундаментальный анализ</li>
@@ -54,7 +54,7 @@ export default function AccessGate({ user }: AccessGateProps) {
         rel="noopener noreferrer"
         className="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-xl transition"
       >
-        🔗 Перейти на PancakeSwap
+        🔗 - Перейти на PancakeSwap
       </a>
 
       <div className="pt-4">
@@ -67,7 +67,7 @@ export default function AccessGate({ user }: AccessGateProps) {
             <p className="text-red-400 font-semibold">🚫 Недостаточно токенов LEO ({leoBalance} / {minRequired})</p>
           )
         ) : (
-          <p className="text-red-400">Ошибка при получении баланса</p>
+          <p className="text-red-400">-------</p>
         )}
       </div>
     </div>
