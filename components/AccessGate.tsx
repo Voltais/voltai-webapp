@@ -11,30 +11,33 @@ export default function AccessGate({ user }: Props) {
   if (!user) {
     // Браузер: пользователь не из Telegram WebApp
     return (
-      <>
-        <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-32 mb-4" />
-        <h1 className="text-2xl font-bold">Ваш помощник в криптовалютном трейдинге</h1>
-        <p className="text-lg">Мощный аналитический комплекс в интерфейсе приложения.
-                               Опытный трейдер работающий на базе моделей ИИ. 
-                               Получаю данные из надежных источников в реальном времени.</p>
-        <p className="text-lg">000777000</p>
-        <p className="text-lg">000888000 </p>
-        <ul className="text-left text-sm mt-4 space-y-2">
-          <li>🔍 Провожу глубокий технический и фундаментальный анализ.</li>
-          <li>📈 Даю торговые рекомендации: вход, SL, TP.</li>
-          <li>💰 Подписка на 30 дней - 3 usd</li>
-        </ul>
-       <a
-  href="https://t.me/voltaicrypt_bot"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold text-sm px-6 py-3 rounded-lg shadow-lg transition duration-200"
->
-  🔗 Открыть приложение
-</a>
-      </>
-    );
-  }
+  <div className="text-center px-6 py-10 bg-gray-950 rounded-xl shadow-xl max-w-2xl mx-auto">
+    <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-28 mb-6 rounded-lg shadow-md" />
+
+    <h1 className="text-3xl font-bold text-white mb-4 tracking-wide">
+      Ваш помощник в криптовалютном трейдинге</h1>
+
+    <p className="text-lg text-gray-300 mb-4">
+      ⚙️ Мощный аналитический комплекс в интерфейсе приложения.</p>
+    <p className="text-base text-gray-400 mb-2">
+      🤖 Опытный трейдер на базе ИИ получаю данные в реальном времени.</p>
+
+    <ul className="text-left text-gray-300 text-base mb-6 space-y-2">
+      <li>🔍 Провожу глубокий технический и фундаментальный анализ</li>
+      <li>📈 Даю торговые рекомендации: вход, SL, TP</li>
+      <li>💰 Подписка: 30 дней - 3 usd</li>
+    </ul>
+
+    <a
+      href="https://t.me/voltaicrypt_bot"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block bg-green-600 hover:bg-green-700 text-white font-bold text-base px-8 py-3 rounded-xl shadow-lg transition duration-300"
+    >
+      🔗 Открыть в Telegram
+    </a>
+  </div>
+);
 
   // Telegram WebApp: доступен функционал
   return (
