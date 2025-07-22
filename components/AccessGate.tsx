@@ -18,13 +18,14 @@ export default function AccessGate({ user }: Props) {
           Ваш помощник в криптотрейдинге</h1>
 
         <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-          ⚙️ Мощный аналитический комбайн на базе моделей ИИ.</p>      
+          ⚙️ Мощный аналитический комбайн на базе ИИ.</p>      
         <p className="text-lg text-gray-200 mb-6 leading-relaxed">
           🧠 Опытный трейдер работающий в реальном времени.</p>
    
         <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
           <li>🔍 Глубокий технический и фундаментальный анализ</li>
-          <li>📈 Торговые рекомендации: Точка входа, Тейк, Стоп</li>
+          <li>📈 Торговые рекомендации: 
+                Точка входа, Тейк, Стоп</li>
           <li>💰 Подписка на 30 дней - 3 usd</li>
         </ul>
 
@@ -34,7 +35,7 @@ export default function AccessGate({ user }: Props) {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold text-base px-6 py-3 rounded-lg shadow-lg transition duration-200"
         >
-         🔗    <b>Открыть WebApp</b>
+         🔗    <b>Открыть приложение</b>
         </a>
         
         <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
