@@ -34,7 +34,7 @@ export default function AccessGate({ user }: Props) {
           rel="noopener noreferrer"
           className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold text-base px-6 py-3 rounded-lg shadow-lg transition duration-200"
         >
-          <li>Открыть приложение</li>
+         🔗    <b>Открыть WebApp</b>
         </a>
         
         <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
