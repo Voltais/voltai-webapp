@@ -9,61 +9,60 @@ type Props = {
 
 export default function AccessGate({ user }: Props) {
   if (!user) {
+    // Пользователь зашёл через браузер, а не из Telegram WebApp
     return (
-      <div className="text-center px-6 py-10 bg-gray-900 text-white rounded-xl shadow-xl max-w-2xl mx-auto">
-        <img
-          src="/logo.jpg"
-          alt="VoltAI"
-          className="mx-auto w-24 mb-6 rounded-full shadow-md"
-        />
-        <h1 className="text-2xl font-extrabold mb-4 text-green-400">
-          VoltAI Crypto Assistant
-        </h1>
+      <div className="text-center px-6 py-8 bg-gray-900 text-white rounded-xl shadow-lg max-w-2xl mx-auto">
+        <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-24 mb-6 rounded-full shadow-md"/>
 
-        <p className="text-base text-gray-300 mb-4 leading-relaxed">
-          ⚙️ Мощный трейдерский интеллект, работающий 24/7.  
-          Анализирует рынки, находит сигналы, показывает уровни, объёмы и точки входа.
-        </p>
+        <h1 className="text-3xl font-extrabold mb-4 text-green-400">
+          🔘Ваш помощник в криптовалютном трейдинге🔘</h1>
+
+        <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+          ⚙️ Мощный аналитический комбайн для криптотрейдинга.</p>      
+        <p className="text-lg text-gray-200 mb-6 leading-relaxed">
+          🧠 Опытный трейдер работающий на комплексе моделей ИИ.</p>
+   
+        <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
+          <li>🔍 Глубокий технический и фундаментальный анализ</li>
+          <li>📈 Торговые рекомендации: 📍Точка входа, Тейк, Стоп</li>
+          <li>💰 Подписка на 30 дней - 3 usd</li>
+        </ul>
 
         <a
           href="https://t.me/voltaicrypt_bot"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-gradient-to-br from-green-500 to-emerald-600 hover:scale-105 text-white font-semibold text-base px-6 py-3 rounded-xl shadow-lg transition duration-300"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold text-base px-6 py-3 rounded-lg shadow-lg transition duration-200"
         >
-          🔗 Открыть в Telegram
+          🔗 Открыть приложение
         </a>
+        
+        <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
+          <li>Новости. Поддержка в канале ...</li>
+          <li>Актуальные торговые стратегии...</li>
+          <li>Оформить подписку....</li>
+        </ul>
       </div>
     );
   }
 
+  // Пользователь внутри Telegram WebApp
   return (
-    <div className="text-center px-6 py-10 bg-gray-900 text-white rounded-xl shadow-xl max-w-2xl mx-auto">
+    <div className="text-center px-6 py-8 bg-gray-900 text-white rounded-xl shadow-lg max-w-2xl mx-auto">
       <img
         src="/logo.jpg"
         alt="VoltAI"
-        className="mx-auto w-24 mb-6 rounded-full shadow-md"
+        className="mx-auto w-24 mb-4 rounded-full"
       />
-
-      <h1 className="text-2xl font-extrabold mb-2 text-green-400">
+      <h1 className="text-2xl font-bold">
         Привет, {user.first_name || user.username}!
       </h1>
-      <p className="text-gray-300 mb-4">
-        Добро пожаловать в платформу VoltAI.
+      <p className="text-gray-300 mt-2">Доступ к платформе VoltAI активен.</p>
+
+      {/* Здесь появятся графики, сигналы, подписка и аналитика */}
+      <p className="mt-4 text-green-400 font-semibold">
+        📊 Ваш статус: Подписка не активирована
       </p>
-
-      <div className="text-sm text-left text-gray-300 space-y-1 mb-6">
-        <p>✅ Подключение к Web3 — готово</p>
-        <p>📊 Подписка: <span className="text-red-400">не активирована</span></p>
-        <p>📈 Доступные функции: RSI, EMA, объёмы, сигналы</p>
-      </div>
-
-      <button
-        className="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-xl shadow-lg transition"
-        onClick={() => alert("🔜 Скоро появится!")}
-      >
-        Перейти к аналитике
-      </button>
     </div>
   );
 }
