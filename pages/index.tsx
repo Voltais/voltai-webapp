@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import AccessGate from "@/components/AccessGate";
+import AccessGate from "../components/AccessGate";
 
 type TgUser = {
   id: number;
