@@ -14,18 +14,18 @@ export default function AccessGate({ user }: Props) {
       <div className="text-center px-6 py-8 bg-gray-900 text-white rounded-xl shadow-lg max-w-2xl mx-auto">
         <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-24 mb-6 rounded-full shadow-md"/>
 
-        <h1 className="text-3xl font-extrabold mb-4 text-green-400">
-          Ваш помощник в криптовалютном трейдинге</h1>
+        <h1 className="text-2xl font-extrabold mb-4 text-green-400">
+          Ваш помощник в криптотрейдинге</h1>
 
         <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-          Мощный аналитический комбайн для криптотрейдинга.</p>      
+          ⚙️ Мощный аналитический комбайн.</p>      
         <p className="text-lg text-gray-200 mb-6 leading-relaxed">
-          Опытный трейдер на базе ИИ.</p>
+          🤖 Опытный трейдер на базе ИИ.</p>
    
         <ul className="text-left text-sm text-gray-300 mb-6 space-y-2">
           <li>🔍 Глубокий технический и фундаментальный анализ</li>
           <li>📈 Торговые рекомендации: вход (лонг/шорт), SL, TP</li>
-          <li>💰 Подписка на 30 дней — 3 usd</li>
+          <li>💰 Подписка на 30 дней - 3 usd</li>
         </ul>
 
         <a
