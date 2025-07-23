@@ -26,7 +26,7 @@ export default function AccessGate({ user }: Props) {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <p🔗 Открыть</p> 
+          🔗 Открыть 
         </a>
       </>
     );
