@@ -172,7 +172,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
             onClick={() => handleNavigation("functional", "/functional")}
           >
             <Settings className="w-6 h-6" />
-            <span className="text-xs font-medium">Функционал</span>
+            <span className="text-xs font-medium">Функции</span>
           </Button>
 
           <Button
