@@ -14,7 +14,7 @@ export default function AccessGate({ user }: Props) {
       <>
         <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-30 mb-4" />
         <h1 className="text-3xl font-bold"></h1>
-        <p className="text-lg">Добро пожаловать</p>
+        <p className="text-lg"></p>
          <ul className="text-left text-sm mt-4 space-y-2">
          <li>📊 Ваш помощник в криптотрейдинге</li>
         </ul>
