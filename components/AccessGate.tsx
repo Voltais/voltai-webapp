@@ -42,6 +42,26 @@ export default function AccessGate({ user }: Props) {
         >
           🔗 Подписка 
        </a>
+        <a
+          href="https://t.me/voltaicrypt_bot"
+          className="inline-block bg-emerald-400 hover:bg-emerald-500 dark:bg-emerald-500 dark:hover:bg-emerald-600 px-8 py-4 rounded-xl font-semibold transition-all duration-200 text-lg text-white relative overflow-hidden"
+          style={{
+            boxShadow: `
+              0 8px 16px rgba(52, 211, 153, 0.3),
+              0 4px 8px rgba(52, 211, 153, 0.2),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              inset 0 -1px 0 rgba(0, 0, 0, 0.1)
+            `,
+            background: "linear-gradient(145deg, #34d399, #10b981)",
+            border: "1px solid rgba(255, 255, 255, 0.1)",
+          }}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span className="relative z-10">🔗 Открыть приложение</span>
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
+        </a>
+      </div>
       </>
     );
   }
