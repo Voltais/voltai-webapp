@@ -33,15 +33,13 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
     return (
       <div className="min-h-screen bg-gradient-to-b from-blue-500 to-blue-600 dark:from-blue-900 dark:to-blue-950 flex flex-col items-center justify-center text-white p-6">
         <div className="absolute top-4 right-4">
-          <button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
             className="text-white hover:bg-white/10 dark:text-white dark:hover:bg-white/20"
           >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
-        </div>
+          </div>
 
         <img
           src="/logo.jpg"
@@ -55,7 +53,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           Ваш помощник в криптотрейдинге
         </p>
 
-        <Card className="bg-white/15 dark:bg-white/10 backdrop-blur-sm border-white/30 dark:border-white/20 text-white p-6 mb-8 w-full max-w-md">
+        <a className="bg-white/15 dark:bg-white/10 backdrop-blur-sm border-white/30 dark:border-white/20 text-white p-6 mb-8 w-full max-w-md">
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
               <span className="text-2xl">🔍</span>
@@ -77,7 +75,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
               </span>
             </li>
           </ul>
-        </Card>
+        </a>
 
         <a
           href="https://t.me/voltaicrypt_bot"
@@ -114,15 +112,13 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           </img>
         </img>
         <div className="flex items-center gap-2">
-          <button
             variant="ghost"
             size="icon"
             onClick={toggleTheme}
             className="text-white hover:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
           >
             {theme === "dark" ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-          </button>
-          <button
+         <a
             variant="ghost"
             size="icon"
             className="text-white hover:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
@@ -135,7 +131,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
             className="text-white hover:bg-white/10 dark:text-gray-200 dark:hover:bg-white/20"
           >
             <X className="w-5 h-5" />
-          </button>
+          </a>
         </div>
       </div>
 
@@ -214,7 +210,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
       {/* Bottom Navigation */}
       <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-sm border-t border-gray-200 dark:border-gray-700">
         <div className="flex items-center justify-around py-2">
-          <button
+          <a
             variant="ghost"
             className={`flex flex-col items-center gap-1 h-auto py-2 px-3 ${
               activeTab === "home"
@@ -225,9 +221,9 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           >
             <Home className="w-6 h-6" />
             <span className="text-xs font-medium">Главная</span>
-          </button>
+          </a>
 
-          <button
+          <a
             variant="ghost"
             className={`flex flex-col items-center gap-1 h-auto py-2 px-3 ${
               activeTab === "functional"
@@ -238,17 +234,17 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           >
             <Settings className="w-6 h-6" />
             <span className="text-xs font-medium">Функционал</span>
-          </button>
+          </a>
 
-          <button
+          <a
             variant="default"
             className="w-14 h-14 rounded-full bg-blue-500 hover:bg-blue-600 dark:bg-blue-600 dark:hover:bg-blue-700 text-white shadow-lg"
             onClick={() => handleNavigation("qr")}
           >
             <QrCode className="w-7 h-7" />
-          </button>
+          </a>
 
-          <button
+          <a
             variant="ghost"
             className={`flex flex-col items-center gap-1 h-auto py-2 px-3 ${
               activeTab === "subscription"
@@ -259,9 +255,9 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           >
             <CreditCard className="w-6 h-6" />
             <span className="text-xs font-medium">Подписка</span>
-          </button>
+          </a>
 
-          <button
+          <a
             variant="ghost"
             className={`flex flex-col items-center gap-1 h-auto py-2 px-3 ${
               activeTab === "profile"
@@ -272,7 +268,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           >
             <User className="w-6 h-6" />
             <span className="text-xs font-medium">Профиль</span>
-          </button>
+          </a>
         </div>
 
         {/* Bot Username */}
