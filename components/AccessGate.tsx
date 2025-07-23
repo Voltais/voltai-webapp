@@ -14,11 +14,11 @@ export default function AccessGate({ user }: Props) {
       <>
         <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-32 mb-4" />
         <h1 className="text-2xl font-bold">VoltAI Crupto Assistant</h1>
-        <p className="text-lg"><bВаш помощник в криптотрейдинге</b>.</p>
+        <p className="text-lg">Ваш помощник в криптотрейдинге.</p>
         <ul className="text-left text-sm mt-4 space-y-2">
           <li>🔍 Провожу глубокий технический и фундаментальный анализ.</li>
           <li>📈 Торговые рекомендации: Точка входа, Стоп-лосс, Тейк-профит, Риск/прибыль</li>
-          <li>💰 <bПодписка</b> на 30 дней - 3 usd</li>
+          <li>💰 Подписка на 30 дней - 3 usd</li>
         </ul>
         <a
           href="https://t.me/voltaicrypt_bot"
