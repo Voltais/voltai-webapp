@@ -1,12 +1,3 @@
-"use client"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Card } from "@/components/ui/card"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Home, Settings, QrCode, CreditCard, User, Link, Users, MoreHorizontal, X } from "lucide-react"
-import { useRouter } from "next/navigation"
-
 type Props = {
   user: {
     id: number
@@ -45,12 +36,12 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           <ul className="text-left text-sm space-y-3">
             <li className="flex items-start gap-2">
               <span>🔍</span>
-              <span>Провожу глубокий технический и фундаментальный анализ по указанной вами паре</span>
+              <span>Провожу глубокий технический и фундаментальный анализ</span>
             </li>
             <li className="flex items-start gap-2">
               <span>📈</span>
               <span>
-                Торговые рекомендации: направление, точка входа, стоп-лосс, тейк-профит, риск/прибыль, уверенность
+                Торговые рекомендации: направление, точка входа, стоп-лосс, тейк-профит, риск/прибыль
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -66,7 +57,7 @@ export default function TelegramWebApp({ user }: Props = { user: { id: 1, first_
           target="_blank"
           rel="noopener noreferrer"
         >
-          🔗 Открыть приложение Telegram
+          🔗 Открыть
         </a>
       </div>
     )
