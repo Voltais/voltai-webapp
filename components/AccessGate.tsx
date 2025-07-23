@@ -12,9 +12,12 @@ export default function AccessGate({ user }: Props) {
     // Браузер: пользователь не из Telegram WebApp
     return (
       <>
-        <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-32 mb-4" />
-        <h1 className="text-2xl font-bold">VoltAI Assistant</h1>
-        <p className="text-lg">Ваш помощник в криптотрейдинге.</p>
+        <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-56 mb-4" />
+        
+        <h1 className="text-3xl font-bold mb-2 text-center drop-shadow-lg" style={{ color: "#00EEFF" }}>
+          VoltAI Assistant</h1>
+        <p className="text-xl mb-8 text-center text-slate-200 dark:text-slate-300">
+          Ваш помощник в криптовалютном трейдинге</p>
         <ul className="text-left text-sm mt-4 space-y-2">
           <li>🔍 Провожу глубокий технический и фундаментальный анализ.</li>
           <li>📈 Торговые рекомендации: Точка входа, Стоп-лосс, Тейк-профит, Риск/прибыль</li>
