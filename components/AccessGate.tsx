@@ -14,16 +14,16 @@ export default function AccessGate({ user }: Props) {
       <>
         <img src="/logo.jpg" alt="VoltAI" className="mx-auto w-30 mb-4" />
         <h1 className="text-3xl font-bold"></h1>
-        <p className="text-lg">Ваш помощник в криптотрейдинге</p>
+        <p className="text-lg">Добро пожаловать</p>
+         <ul className="text-left text-sm mt-4 space-y-2">
+         <li>📊 Ваш помощник в криптотрейдинге</li>
+        </ul>
         <ul className="text-left text-sm mt-4 space-y-2">
           <li>🔍 Провожу глубокий технический и фундаментальный анализ</li>
           <li>📈 Даю рекомендации: Точка входа, Стоп-лосс, Тейк-профит</li>
           <li>💰 Подписка на 30 дней - 3 usd</li>
         </ul>
-         <ul className="text-left text-sm mt-4 space-y-2">
-         <li>🔍 Ваш помощник в криптотрейдинге</li>
-        </ul>
-        <a
+       <a
           href="https://t.me/voltaicrypt_bot"
           className="inline-block bg-green-600 hover:bg-green-700 px-5 py-2 rounded-lg mt-6"
           target="_blank"
@@ -31,7 +31,10 @@ export default function AccessGate({ user }: Props) {
         >
           🔗 Открыть 
         </a>
-         <a
+         <ul className="text-left text-sm mt-4 space-y-2">
+         <li>*****</li>
+        </ul>
+        <a
           href="https://t.me/voltaicrypt_bot"
           className="inline-block bg-green-600 hover:bg-green-700 px-5 py-2 rounded-lg mt-6"
           target="_blank"
